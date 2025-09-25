@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import pickle
 
-st.set_page_config(page_title='Student Exam Score Predictor', layout='centered')
+st.set_page_config(page_title='Student Exam Score Predictor', layout='centered')   # it helps to set the page title and layout
 
 st.title('Student Exam Score Predictor')
 st.write('Input student details to predict their expected exam score using the trained model.')
@@ -14,7 +14,7 @@ with open('best_model.pkl', 'rb') as f:
 
 st.sidebar.header('Student Parameters')
 
-hours_studied = st.sidebar.slider('Hours Studied', 0, 10, 5)
+hours_studied = st.sidebar.slider('Hours Studied', 0, 10, 5)  # min, max, default
 previous_score = st.sidebar.slider('Previous Exam Score', 0, 100, 70)
 extracurricular = st.sidebar.selectbox('Extracurricular Activities', ['No', 'Yes'])
 sleep_hours = st.sidebar.slider('Sleep Hours', 0, 12, 7)
@@ -29,6 +29,6 @@ input_df = pd.DataFrame({
     'Sample Question Papers Practiced': [papers_practiced]
 })
 
-if st.button('Predict'):
-    prediction = model.predict(input_df)[0]
+if st.button('Predict'):     
+    prediction = model.predict(input_df)[0]   # the model returns a list, we take the first element, which is the predicted score
     st.success(f'📚 Predicted Exam Score: {prediction:.2f}')
