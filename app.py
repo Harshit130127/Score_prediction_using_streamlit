@@ -17,7 +17,7 @@ st.sidebar.header('Student Parameters')
 hours_studied = st.sidebar.slider('Hours Studied', 0, 10, 5)  # min, max, default
 previous_score = st.sidebar.slider('Previous Exam Score', 0, 100, 70)
 extracurricular = st.sidebar.selectbox('Extracurricular Activities', ['No', 'Yes'])
-sleep_hours = st.sidebar.slider('Sleep Hours', 0, 12, 7)
+sleep_hours = st.sidebar.slider('Sleep Hours', 2, 12, 7)
 papers_practiced = st.sidebar.slider('Sample Question Papers Practiced', 0, 10, 3)
 
 # input DataFrame
